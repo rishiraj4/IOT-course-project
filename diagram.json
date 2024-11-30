@@ -1,0 +1,29 @@
+{
+    "version": 1,
+    "author": "Rishiraj N",
+    "editor": "wokwi",
+    "parts": [
+      { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": -28.8, "left": 4.84, "attrs": {} },
+      { "type": "wokwi-pir-motion-sensor", "id": "pir1", "top": -44, "left": -122.58, "attrs": {} },
+      { "type": "wokwi-relay-module", "id": "relay1", "top": 77, "left": 182.4, "attrs": {} },
+      { "type": "wokwi-pir-motion-sensor", "id": "pir2", "top": -92, "left": 175.02, "attrs": {} },
+      { "type": "wokwi-relay-module", "id": "relay2", "top": 221, "left": -48, "attrs": {} }
+    ],
+    "connections": [
+      [ "esp:TX", "$serialMonitor:RX", "", [] ],
+      [ "esp:RX", "$serialMonitor:TX", "", [] ],
+      [ "pir1:VCC", "esp:3V3", "red", [ "v9.6", "h76.8", "v-57.6" ] ],
+      [ "pir1:GND", "esp:GND.1", "black", [ "v0" ] ],
+      [ "pir1:OUT", "esp:25", "green", [ "v0" ] ],
+      [ "relay1:VCC", "esp:5V", "red", [ "h-19.2", "v105.6", "h-172.8", "v-9.6" ] ],
+      [ "relay1:GND", "esp:GND.3", "black", [ "h-48", "v-38.8" ] ],
+      [ "relay1:IN", "esp:17", "green", [ "h-57.6", "v-19.4" ] ],
+      [ "relay2:VCC", "esp:5V", "red", [ "h0", "v-67.2" ] ],
+      [ "relay2:GND", "esp:GND.1", "black", [ "h-28.8", "v-115.6" ] ],
+      [ "relay2:IN", "esp:14", "green", [ "h-48", "v-134.6" ] ],
+      [ "pir2:VCC", "esp:3V3", "red", [ "v0", "h-67.2", "v-48", "h-144" ] ],
+      [ "pir2:OUT", "esp:22", "green", [ "v0" ] ],
+      [ "pir2:GND", "esp:GND.2", "black", [ "v9.6", "h-0.26" ] ]
+    ],
+    "dependencies": {}
+  }
